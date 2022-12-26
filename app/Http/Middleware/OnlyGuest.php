@@ -6,7 +6,7 @@ use Closure;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 
-class OnlyClient
+class OnlyGuest
 {
     /**
      * Handle an incoming request.
@@ -17,7 +17,7 @@ class OnlyClient
      */
     public function handle(Request $request, Closure $next)
     {
-        if (Auth::user()->role_id != 2) {
+        if (Auth::user()) {
             return redirect('books');
         }
 
