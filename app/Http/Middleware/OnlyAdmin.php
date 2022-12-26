@@ -20,5 +20,7 @@ class OnlyAdmin
         if (Auth::user()->role_id != 1) {
             return redirect('books');
         }
+
+        return $next($request);
     }
 }
