@@ -10,6 +10,13 @@
             <div  class="text-center mb-5">
                 <h1>LOGIN myPerpus</h1>
             </div>
+
+            @if (session('status'))
+                <div class="alert alert-danger">
+                    {{ session('message') }}
+                </div>
+            @endif
+            
             <div class="form-outline mb-3">
                 <input type="username" id="username" class="form-control form-control-lg" name="username" required/>
                 <label class="form-label" for="username">Username</label>
@@ -20,13 +27,6 @@
                 <input type="password" id="password" name="password" class="form-control form-control-lg" required/>
                 <label class="form-label" for="password">Password</label>
             </div>
-            
-            
-            @if (session('status'))
-                <div class="alert alert-danger">
-                    {{ session('message') }}
-                </div>
-            @endif
 
             <!-- Submit button -->
             <button type="submit" class="btn btn-primary btn-block mb-3 form-control-lg">LOGIN</button>
