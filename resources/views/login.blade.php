@@ -7,8 +7,8 @@
         <form action="" method="POST">
             @csrf
             <!-- Uname input -->
-            <div  class="text-center mb-3">
-                <h1>LOGIN FORM</h1>
+            <div  class="text-center mb-5">
+                <h1>LOGIN myPerpus</h1>
             </div>
             <div class="form-outline mb-3">
                 <input type="username" id="username" class="form-control form-control-lg" name="username" required/>

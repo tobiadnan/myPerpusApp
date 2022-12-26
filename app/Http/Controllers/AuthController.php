@@ -18,6 +18,14 @@ class AuthController extends Controller
         return view('register');
     }
 
+    public function logout(Request $request)
+    {
+        Auth::logout();
+        $request->session()->invalidate();
+        $request->session()->regenerate();
+        return redirect('login');
+    }
+
     public function authenticating(Request $request)
     {
         $credentials = $request->validate([
@@ -44,13 +52,5 @@ class AuthController extends Controller
         Session::flash('status', 'Login failed');
         Session::flash('message', 'Username or password invalid!!');
         return redirect('/login');
-    }
-
-    public function logout(Request $request)
-    {
-        Auth::logout();
-        $request->session()->invalidate();
-        $request->session()->regenerate();
-        return redirect('login');
     }
 }
