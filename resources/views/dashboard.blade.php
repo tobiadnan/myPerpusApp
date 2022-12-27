@@ -3,7 +3,7 @@
 
 @section('content')
 
-<h1 class="mb-5">Welcome, {{ Auth::user()->username }}</h1>
+<h1 class="mb-5 mt-5">Welcome, {{ Auth::user()->username }}</h1>
 
 <div class="row" mt-5>
     <div class="col-lg-4">
@@ -17,6 +17,7 @@
             </div>
         </div>
     </div>
+
     <div class="col-lg-4">
         <div class="card-data categories">
             <div class="row">
@@ -28,6 +29,7 @@
             </div>
         </div>
     </div>
+
     <div class="col-lg-4">
         <div class="card-data users">
             <div class="row">
@@ -41,4 +43,25 @@
     </div>
 </div>
 
+<div class="mt-5">
+    <h2>#Rent Logs</h2>
+    <table class="table">
+        <thead>
+            <tr>
+                <th>No.</th>
+                <th>User</th>
+                <th>Book Title</th>
+                <th>Rent Date</th>
+                <th>Return Date</th>
+                <th>Actual Return Date</th>
+                <th>Status</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td colspan="7" style="text-align: center">No Data</td>
+            </tr>
+        </tbody>
+    </table>
+</div>
 @endsection
