@@ -12,7 +12,7 @@
                 <div class="col-6"><i class="bi bi-book"></i></div>
                 <div class="col-6 d-flex justify-content-center flex-column align-items-end">
                     <div  class="card-desc">Books</div>
-                    <div class="card-count">175</div>
+                    <div class="card-count">{{ $book_count }}</div>
                 </div>
             </div>
         </div>
@@ -23,7 +23,7 @@
                 <div class="col-6"><i class="bi bi-list-task"></i></div>
                 <div class="col-6 d-flex justify-content-center flex-column align-items-end">
                     <div  class="card-desc">Categories</div>
-                    <div class="card-count">23</div>
+                    <div class="card-count">{{ $category_count }}</div>
                 </div>
             </div>
         </div>
@@ -34,7 +34,7 @@
                 <div class="col-6"><i class="bi bi-people"></i></div>
                 <div class="col-6 d-flex justify-content-center flex-column align-items-end">
                     <div  class="card-desc">Users</div>
-                    <div class="card-count">311</div>
+                    <div class="card-count">{{ $user_count }}</div>
                 </div>
             </div>
         </div>
