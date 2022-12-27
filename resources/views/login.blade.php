@@ -1,4 +1,5 @@
 @extends('template.main')
+@section('title','Login')
 @section('container')
 
 <div class="main d-flex flex-column justify-content-center align-items-center">
