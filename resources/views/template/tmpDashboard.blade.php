@@ -30,9 +30,6 @@
         .main{
             height: 100vh;
         }
-        .login-box{
-            width: 350px;
-        }
         .body-content{
             color: #000;
         }
@@ -40,16 +37,14 @@
             background: rgb(75, 75, 75);
             color: white;
         }
-
-        .sidebar ul{
-            list-style: none;
-        }
-        .sidebar li{
-            padding: 10px;
-        }
         .sidebar a{
             color: white;
             text-decoration: none;
+            display: block;
+            padding: 15px 10px;
+        }
+        .sidebar a:hover{
+            background: #000;
         }
     </style>
 
@@ -69,7 +64,28 @@
                 </button>
             </div>
         </nav>
-        
+        <div class="body-content h-100">
+            <div class="row g-0 h-100">
+                <div class="sidebar col-lg-2 collapse d-lg-block" id="navbarTogglerDemo03">
+                        @if (Auth::user() -> role_id ==1) 
+                            <a href="dashboard">Dashboard</a>
+                            <a href="books">Books</a>
+                            <a href="#">Categories</a>
+                            <a href="#">Users</a>
+                            <a href="#">Rent Logs</a>
+                            <a href="logout">Logout</a>
+                        @else
+                            <a href="profile">Profile</a>
+                            <a href="logout">Logout</a>
+                        @endif
+                </div>
+                <div class="content col-lg-10 p-5">
+                    @yield('content')
+                </div>
+            </div>
+        </div>
+    </div>
+
     <div>
         @yield('content')
     </div>

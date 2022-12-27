@@ -1,12 +1,13 @@
 @extends('template.main')
-@section('container')
+@section('title','Register')
+@section('content')
     <div class="main d-flex flex-column justify-content-center align-items-center">
         <div class="login-box">
             <form action="" method="POST">
                 @csrf
                 <!-- Uname input -->
                 <div  class="text-center mb-5">
-                    <h1>REGISTER myPerpus</h1>
+                    <h1>REGISTER</h1>
                 </div>
 
                 @if (session('status'))

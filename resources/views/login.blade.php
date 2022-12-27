@@ -1,6 +1,6 @@
 @extends('template.main')
 @section('title','Login')
-@section('container')
+@section('content')
 
 <div class="main d-flex flex-column justify-content-center align-items-center">
 
@@ -9,7 +9,7 @@
             @csrf
             <!-- Uname input -->
             <div  class="text-center mb-5">
-                <h1>LOGIN myPerpus</h1>
+                <h1>LOGIN</h1>
             </div>
 
             @if (session('status'))

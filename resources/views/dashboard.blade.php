@@ -1,4 +1,4 @@
-@extends('template.main')
+@extends('template.tmpDashboard')
 @section('title','Dashboard')
 
 @section('content')
