@@ -39,6 +39,8 @@ Route::middleware('auth')->group(function () {
     Route::get('categories', [CategoryController::class, 'index']);
     Route::get('category-add', [CategoryController::class, 'add']);
     Route::post('category-add', [CategoryController::class, 'store']);
+    Route::get('category-edit/{slug}', [CategoryController::class, 'edit']);
+    Route::put('category-edit/{slug}', [CategoryController::class, 'update']);
 
     Route::get('users', [UserController::class, 'index']);
     Route::get('rentLogs', [RentLogController::class, 'index']);
