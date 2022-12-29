@@ -4,7 +4,7 @@
 @section('content')
     <h1>Add New Book</h1>
 
-    <div>
+    <div class="">
         @if ($errors->any())
             <div class="alert alert-danger">
                 <ul>
@@ -19,18 +19,18 @@
             @csrf
             <div class="mt-5 w-25">
                 <div class="form-outline mb-3">
-                    <input type="text" id="code" class="form-control form-control-lg" name="book_code" required/>
+                    <input type="text" id="code" class="form-control form-control-lg" name="book_code" required value="{{ old('book_code') }}" />
                     <label class="form-label" for="code">Book Code</label>
                 </div>
 
                 <div class="form-outline mb-3">
-                    <input type="text" id="title" class="form-control form-control-lg" name="title" required/>
+                    <input type="text" id="title" class="form-control form-control-lg" name="title" required value="{{ old('title') }}"/>
                     <label class="form-label" for="title">Book Title</label>
                 </div>
 
                 <div class="mb-3">
-                    <label class="form-label" for="cover">Cover</label>
-                    <input type="file" id="cover" class="form-control form-control-lg" name="cover"/>
+                    <label class="form-label" for="imagecover">Image Cover</label>
+                    <input type="file" id="imagecover" class="form-control form-control-lg" name="imagecover"/>
                 </div>
                 <div class="mt-3">
                     <button class="btn btn-success" type="submit">Add Book</button>
