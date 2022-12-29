@@ -1,5 +1,5 @@
 @extends('template.tmpDashboard')
-@section('title','Delete Categories')
+@section('title','Delete Category')
 
 @section('content')
     <h2>Are You sure to delete category {{ $category->name }} ?</h2>
