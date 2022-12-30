@@ -40,4 +40,34 @@ class BookController extends Controller
         $book->categories()->sync($request->categories);
         return redirect('books')->with('status', 'Add new book successfully!');
     }
+
+    public function edit($slug)
+    {
+        $book = Book::where('slug', $slug)->first();
+        $categories = Category::all();
+
+        return view('book-edit', [
+            'book' => $book,
+            'categories' => $categories
+        ]);
+    }
+
+    public function update(Request $request, $slug)
+    {
+        //$newName = '';
+        if ($request->file('imagecover')) {
+            $extension = $request->file('imagecover')->getClientOriginalExtension();
+            $newName = $request->title . '-' . now()->timestamp . '.' . $extension;
+            $request->file('imagecover')->storeAs('cover', $newName);
+            $request['cover'] = $newName;
+        }
+
+        $book = Book::where('slug', $slug)->first();
+        $book->update($request->all());
+
+        if ($request->categories) {
+            $book->categories()->sync($request->categories);
+        }
+        return redirect('books')->with('status', 'Update book successfully!');
+    }
 }
