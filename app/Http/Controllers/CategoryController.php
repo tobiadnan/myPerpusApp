@@ -52,6 +52,7 @@ class CategoryController extends Controller
         $category = Category::where('slug', $slug)->first();
         return view('category-delete', ['category' => $category]);
     }
+
     public function destroy($slug)
     {
         $category = Category::where('slug', $slug)->first();
