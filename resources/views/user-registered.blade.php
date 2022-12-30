@@ -3,7 +3,7 @@
 
 @section('content')
     <h1>Usres Need to Approve</h1>
-
+ 
     <div class="mt-5 d-flex justify-content-end">
         <a href="users" class="btn btn-primary me-2">Users Approved</a>
     </div>

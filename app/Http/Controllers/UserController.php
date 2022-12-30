@@ -12,7 +12,6 @@ class UserController extends Controller
         $users = User::where('role_id', 2)->where('status', 'active')->get();
         return view('users', ['users' => $users]);
     }
-
     public function profile()
     {
         return view('profile');

@@ -7,7 +7,7 @@
     <div class="mt-5 d-flex justify-content-end">
         <a href="user-registered" class="btn btn-success me-2">Need to Approve</a>
         <a href="#" class="btn btn-secondary">Users Banned</a>
-    </div>
+    </div> 
 
     <div class="my-5">
         <table class="table">
