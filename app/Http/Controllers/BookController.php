@@ -83,4 +83,18 @@ class BookController extends Controller
         $book->delete();
         return redirect('books')->with('status', 'Book deleted successfully!');
     }
+
+    public function deleted()
+    {
+        $deletedBooks = Book::onlyTrashed()->get();
+        return view('book-deleted-list', ['deletedBooks' => $deletedBooks]);
+    }
+
+    public function restore($slug)
+    {
+        Book::withTrashed()
+            ->where('slug', $slug)
+            ->restore();
+        return redirect('books')->with('status', 'Book restored successfully!');
+    }
 }
