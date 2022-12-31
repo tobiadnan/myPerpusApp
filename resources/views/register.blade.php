@@ -16,6 +16,12 @@
                     </div>
                 @endif
 
+                {{-- Name input --}}
+                <div class="form-outline mb-3">
+                    <input type="text" id="name" class="form-control form-control-lg" name="name" required/>
+                    <label class="form-label" for="name">Full Name</label>
+                </div>
+                
                 {{-- Username input --}}
                 <div class="form-outline mb-3">
                     <input type="username" id="username" class="form-control form-control-lg" name="username" required/>
@@ -26,6 +32,12 @@
                 <div class="form-outline mb-3">
                     <input type="password" id="password" name="password" class="form-control form-control-lg" required/>
                     <label class="form-label" for="password">Password</label>
+                </div>
+                
+                {{-- Email input --}}
+                <div class="form-outline mb-3">
+                    <input type="email" id="email" class="form-control form-control-lg" name="email" required/>
+                    <label class="form-label" for="email">Email</label>
                 </div>
                 
                 {{-- Phone input --}}

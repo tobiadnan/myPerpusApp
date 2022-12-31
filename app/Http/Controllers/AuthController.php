@@ -65,8 +65,10 @@ class AuthController extends Controller
     public function registerProcess(Request $request)
     {
         $validated = $request->validate([
+            'name' => 'required|max:255',
             'username' => 'required|unique:users|max:255',
             'password' => 'required|max:255',
+            'email' => 'required|email|unique:users,email',
             'phone' => 'required|max:15',
             'address' => 'required',
         ]);
@@ -76,7 +78,7 @@ class AuthController extends Controller
         //dd($request->all());
 
         Session::flash('status', 'Success');
-        Session::flash('message', 'You have register. Just wait for Administator to validate your data !!');
-        return redirect('register');
+        Session::flash('message', 'You have register. Just wait for Administator to validate your data so You can login!!');
+        return redirect('login');
     }
 }

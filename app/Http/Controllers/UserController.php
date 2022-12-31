@@ -22,4 +22,20 @@ class UserController extends Controller
         $registered = User::where('status', 'inactive')->where('role_id', 2)->get();
         return view('user-registered', ['registered' => $registered]);
     }
+
+    public function show($slug)
+    {
+        $user = User::where('slug', $slug)->first();
+        return view('user-detail', ['user' => $user]);
+    }
+
+    public function approve($slug)
+    {
+        $user = User::where('slug', $slug)->first();
+        $user->status = 'active';
+        $user->save();
+
+        return redirect('user-detail/' . $slug)->with('status', 'User Approved!');
+        //return view('user-detail', ['user' => $user]);
+    }
 }

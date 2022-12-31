@@ -14,7 +14,7 @@
             <thead>
                 <tr>
                     <th>No.</th>
-                    <th>Username</th>
+                    <th>Name</th>
                     <th>Address</th>
                     <th>Phone</th>
                     <th>Action</th>
@@ -24,7 +24,7 @@
                 @foreach ($users as $item)
                     <tr>
                         <td>{{ $loop->iteration }}</td>
-                        <td>{{ $item->username }}</td>
+                        <td>{{ $item->name }}</td>
                         <td>{{ $item->address }}</td>
                         <td>
                             @if ($item->phone)
@@ -34,7 +34,7 @@
                             @endif
                         </td>
                         <td>
-                            <a href="#">Detail</a> | <a href="#">Banned</a>
+                            <a href="/user-detail/{{ $item->slug }}">Detail</a> | <a href="#">Banned</a>
                         </td>
                     </tr>
                 @endforeach

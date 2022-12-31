@@ -3,7 +3,7 @@
 
 @section('content')
 
-<h1 class="mb-5 mt-5">Welcome, {{ Auth::user()->username }}</h1>
+<h1 class="mb-5 mt-5">Welcome, {{ Auth::user()->name }}</h1>
 
 <div class="row" mt-5>
     <div class="col-lg-4">
