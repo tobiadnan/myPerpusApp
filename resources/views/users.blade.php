@@ -9,6 +9,14 @@
         <a href="#" class="btn btn-secondary">Users Banned</a>
     </div> 
 
+     <div class="mt-5">
+        @if (session('status'))
+            <div class="alert alert-success">
+                {{ session('status') }}
+            </div>
+        @endif
+    </div>
+
     <div class="my-5">
         <table class="table">
             <thead>
@@ -34,7 +42,7 @@
                             @endif
                         </td>
                         <td>
-                            <a href="/user-detail/{{ $item->slug }}">Detail</a> | <a href="#">Banned</a>
+                            <a href="/user-detail/{{ $item->slug }}">Detail</a> | <a href="/user-banned/{{ $item->slug }}">Banned</a>
                         </td>
                     </tr>
                 @endforeach
