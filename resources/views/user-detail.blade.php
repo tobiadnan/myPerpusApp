@@ -23,6 +23,7 @@
             <div class="col-lg-8">
                 <div class="card mb-4">
                     <div class="card-body">
+
                         <div class="row">
                             <div class="col-sm-3">
                                 <p class="mb-0">Name</p>
@@ -32,6 +33,7 @@
                             </div>
                         </div>
                         <hr>
+
                         <div class="row">
                             <div class="col-sm-3">
                                 <p class="mb-0">Username</p>
@@ -41,6 +43,7 @@
                             </div>
                         </div>
                         <hr>
+
                         <div class="row">
                             <div class="col-sm-3">
                                 <p class="mb-0">Email</p>
@@ -50,6 +53,7 @@
                             </div>
                         </div>
                         <hr>
+
                         <div class="row">
                             <div class="col-sm-3">
                                 <p class="mb-0">Phone</p>
@@ -59,6 +63,7 @@
                             </div>
                         </div>
                         <hr>
+
                         <div class="row">
                             <div class="col-sm-3">
                                 <p class="mb-0">Address</p>
@@ -68,6 +73,7 @@
                             </div>
                         </div>
                         <hr>
+
                         <div class="row">
                             <div class="col-sm-3">
                                 <p class="mb-0">Register at</p>
@@ -77,6 +83,7 @@
                             </div>
                         </div>
                         <hr>
+
                         <div class="row">
                             <div class="col-sm-3">
                                 <p class="mb-0">Status</p>
@@ -90,4 +97,5 @@
             </div>
         </div>
     </div>
+
 @endsection
