@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Models\RentLog;
 use App\Models\User;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
 
 class UserController extends Controller
 {
@@ -15,7 +16,11 @@ class UserController extends Controller
     }
     public function profile()
     {
-        return view('profile');
+
+        $rentLogs = RentLog::with(['user', 'book'])->where('user_id', Auth::user()->id)->get();
+        return view('profile', [
+            'rentLogs' => $rentLogs
+        ]);
     }
 
     public function registered()
