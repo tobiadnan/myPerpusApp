@@ -4,11 +4,11 @@
 @section('content')
     <h1>Detail User</h1>
  
-    <div class="mt-5 d-flex justify-content-end">
-        @if ($user->status == 'inactive')
+     @if ($user->status == 'inactive')
+        <div class="mt-5 d-flex justify-content-end">
             <a href="/user-approve/{{ $user->slug }}" class="btn btn-success me-2">Approve User</a>        
-        @endif
-    </div>
+        </div>
+    @endif
 
      <div class="mt-5">
         @if (session('status'))
@@ -97,5 +97,8 @@
             </div>
         </div>
     </div>
-
+    <div class="mt-5">
+        <h2>User Rent History</h2>
+        <x-rent-log-table :rentLog='$rentLogs'/>
+    </div>
 @endsection

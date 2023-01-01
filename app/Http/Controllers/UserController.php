@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\RentLog;
 use App\Models\User;
 use Illuminate\Http\Request;
 
@@ -26,7 +27,11 @@ class UserController extends Controller
     public function show($slug)
     {
         $user = User::where('slug', $slug)->first();
-        return view('user-detail', ['user' => $user]);
+        $rentLogs = RentLog::with(['user', 'book'])->where('user_id', $user->id)->get();
+        return view('user-detail', [
+            'user' => $user,
+            'rentLogs' => $rentLogs
+        ]);
     }
 
     public function approve($slug)
