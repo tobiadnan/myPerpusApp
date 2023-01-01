@@ -2,6 +2,7 @@
 
 use App\Http\Controllers\AuthController;
 use App\Http\Controllers\BookController;
+use App\Http\Controllers\BookRentController;
 use App\Http\Controllers\CategoryController;
 use App\Http\Controllers\DashboardController;
 use App\Http\Controllers\PublicController;
@@ -64,6 +65,8 @@ Route::middleware('auth')->group(function () {
         Route::get('user-destroy/{slug}', [UserController::class, 'destroy']);
         Route::get('user-deleted', [UserController::class, 'deleted']);
         Route::get('user-restore/{slug}', [UserController::class, 'restore']);
+
+        Route::get('book-rent', [BookRentController::class, 'index']);
     });
 
     Route::get('rentLogs', [RentLogController::class, 'index']);

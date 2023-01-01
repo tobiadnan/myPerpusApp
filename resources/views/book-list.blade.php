@@ -4,7 +4,7 @@
 @section('content')
     <form action="#" method="get">
         <div class="row">
-            <div class="col-12 col-sm-6">
+            <div class="col-12 col-sm-6 w-25">
                 <select name="category" id="category" class="form-control">
                     <option value="">Select Category</option>
                     @foreach ($categories as $item)

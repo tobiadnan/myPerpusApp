@@ -45,8 +45,10 @@
                             <a href="/users" @if (request()->route()->uri == 'users' || request()->route()->uri == 'user-registered' || request()->route()->uri == 'user-detail/{slug}') class='active'@endif>Users</a>
 
                             <a href="/rentLogs" @if (request()->route()->uri == 'rentLogs') class='active'@endif>Rent Logs</a>
-                            
+                        
                             <a href="/" @if (request()->route()->uri == '/') class='active'@endif>Book List</a>
+
+                            <a href="/book-rent" @if (request()->route()->uri == 'book-rent') class='active'@endif>Book Rent</a>
                             
                             <a href="logout">Logout</a>
                         @else
