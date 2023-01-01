@@ -49,6 +49,19 @@ class UserController extends Controller
     {
         $user = User::where('slug', $slug)->first();
         $user->delete();
-        return redirect('users')->with('status', 'User deleted successfully!');
+        return redirect('users')->with('status', 'User banned successfully!');
+    }
+    public function deleted()
+    {
+        $deletedUser = User::onlyTrashed()->get();
+        return view('user-deleted-list', ['deletedUser' => $deletedUser]);
+    }
+
+    public function restore($slug)
+    {
+        User::withTrashed()
+            ->where('slug', $slug)
+            ->restore();
+        return redirect('users')->with('status', 'User restored successfully!');
     }
 }

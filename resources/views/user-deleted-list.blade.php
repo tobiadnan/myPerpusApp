@@ -1,12 +1,11 @@
 @extends('template.tmpDashboard')
-@section('title','List of Users')
+@section('title','Banned Users')
 
 @section('content')
-    <h1>Usres Approved</h1>
+    <h1>Banned Usres List</h1>
 
     <div class="mt-5 d-flex justify-content-end">
-        <a href="/user-registered" class="btn btn-success me-2">Need to Approve</a>
-        <a href="/user-deleted" class="btn btn-secondary">Users Banned</a>
+        <a href="/users" class="btn btn-primary me-2">Back</a>
     </div> 
 
      <div class="mt-5">
@@ -29,7 +28,7 @@
                 </tr>
             </thead>
             <tbody>
-                @foreach ($users as $item)
+                @foreach ($deletedUser as $item)
                     <tr>
                         <td>{{ $loop->iteration }}</td>
                         <td>{{ $item->name }}</td>
@@ -42,7 +41,7 @@
                             @endif
                         </td>
                         <td>
-                            <a href="/user-detail/{{ $item->slug }}">Detail</a> | <a href="/user-banned/{{ $item->slug }}">Banned</a>
+                            <a href="/user-restore/{{ $item->slug }}">Restore</a>
                         </td>
                     </tr>
                 @endforeach
