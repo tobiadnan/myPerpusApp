@@ -8,9 +8,16 @@
         <h1 class="mb-5">Book Rent Form</h1>
 
         <div class="mt-5">
-            @if (session('msg'))
-                <div class="alert {{ 'alert-class' }}">
-                    {{ session('msg') }}
+             {{-- @if (session('msg'))
+                    <div class="alert {{ 'alert-class' }}">
+                        {{ session('msg') }}
+                    </div>
+                @endif --}}
+                
+
+            @if(Session::has('message'))
+                <div class="alert alert-{{session('message')['type']}}">
+                    {{session('message')['text']}}
                 </div>
             @endif
         </div>

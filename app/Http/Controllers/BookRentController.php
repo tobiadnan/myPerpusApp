@@ -31,15 +31,19 @@ class BookRentController extends Controller
         $book = Book::findOrFail($request->book_id)->only('status');
 
         if ($book['status'] != 'in stock') {
-            Session::flash('msg', 'Book is not available now');
-            Session::flash('alert-class', 'alert-danger');
+            Session::flash('message', [
+                'text' => 'Book is not available now',
+                'type' => 'danger'
+            ]);
             return redirect('book-rent');
         } else {
             $count = RentLog::where('user_id', $request->user_id)->where('actual_return_date', null)->count();
 
             if ($count >= 3) {
-                Session::flash('msg', 'Sorry. The user has exceeded the book rental limit. The user has 3 books that have not been returned');
-                Session::flash('alert-class', 'alert-danger');
+                Session::flash('message', [
+                    'text' => 'Sorry. The user has exceeded the book rental limit. The user has 3 books that have not been returned!',
+                    'type' => 'danger'
+                ]);
                 return redirect('book-rent');
             } else {
                 try {
@@ -52,8 +56,10 @@ class BookRentController extends Controller
                     $book->save();
                     DB::commit();
 
-                    Session::flash('msg', 'Rent success');
-                    Session::flash('alert-class', 'alert-success');
+                    Session::flash('message', [
+                        'text' => 'Rent success',
+                        'type' => 'success'
+                    ]);
                     return redirect('book-rent');
                 } catch (\Throwable $th) {
                     DB::rollBack();
