@@ -2,6 +2,25 @@
 @section('title','Books')
 
 @section('content')
+    <form action="#" method="get">
+        <div class="row">
+            <div class="col-12 col-sm-6">
+                <select name="category" id="category" class="form-control">
+                    <option value="">Select Category</option>
+                    @foreach ($categories as $item)
+                    <option value="{{ $item->id }}">{{ $item->name }}</option>
+                    @endforeach
+                </select>
+            </div>
+            <div class="col-12 col-sm-6">
+                <div class="input-group">
+                    <input type="search" class="form-control rounded" placeholder="Type your book title" aria-label="Search" aria-describedby="search-addon" name="title"/>
+                    <button type="submit" class="btn btn-outline-primary">Search</button>
+                </div>
+            </div>
+        </div>
+    </form>
+
     <div class="my-5">
         <div class="row">
             @foreach ($books as $item)   
