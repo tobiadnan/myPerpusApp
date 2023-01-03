@@ -6,6 +6,13 @@
 
     <div class="col-12 col-md-8 offset-md-2 col-lg-6 offsite-md-3">
         <h1>Book Return Form</h1>
+        <div class="mt-5">
+            @if(Session::has('message'))
+                <div class="alert alert-{{session('message')['type']}}">
+                    {{session('message')['text']}}
+                </div>
+            @endif
+        </div>
         <form action="" method="post">
             @csrf
             <div class="mb-3">
@@ -21,7 +28,7 @@
                 <select name="book_id" id="book" class="form-control form-control-lg inputbox" >
                     <option value="">Select Book</option>
                     @foreach ($books as $item)
-                        <option value="{{ $item->id }}">{{ $item->title }}</option>
+                        <option value="{{ $item->id }}">{{ $item->book_code }} {{ $item->title }}</option>
                         @endforeach
                 </select>
             </div>
