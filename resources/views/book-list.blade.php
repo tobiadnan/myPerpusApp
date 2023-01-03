@@ -2,6 +2,7 @@
 @section('title','Books')
 
 @section('content')
+<h1 class="mb-5">My Perpus Collection</h1>
     <form action="#" method="get">
         <div class="row">
             <div class="col-12 col-sm-6 w-25">

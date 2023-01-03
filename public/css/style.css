@@ -27,15 +27,16 @@
     transition: 0.3s;
 }
 .card-data.books {
-    background-color: rgb(221, 136, 136);
+    background-color: rgb(232, 22, 22);
     color: #fff;
 }
 .card-data.categories {
-    background-color: rgb(144, 209, 118);
+    background-color: rgb(95, 215, 47);
     color: #fff;
 }
 .card-data.users {
-    background-color: whitesmoke;
+    background-color: rgb(0, 91, 236);
+    color: #fff;
 }
 .card-data:hover {
     box-shadow: 0 10px 16px 0 rgba(0, 0, 0, 0.2);

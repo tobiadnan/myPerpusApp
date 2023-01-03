@@ -8,10 +8,11 @@
 <div class="row" mt-5>
     <div class="col-lg-4">
         <div class="card-data books">
-            <div class="row">
-                <div class="col-6"><i class="bi bi-book"></i></div>
-                <div class="col-6 d-flex justify-content-center flex-column align-items-end">
-                    <div  class="card-desc">Books</div>
+            <div class="row" >
+                <div class="col-6">
+                    <i class="bi bi-book"></i></div>
+                    <div class="col-6 d-flex justify-content-center flex-column align-items-end">
+                        <div  class="card-desc">Books</div>
                     <div class="card-count">{{ $book_count }}</div>
                 </div>
             </div>
@@ -45,23 +46,8 @@
 
 <div class="mt-5">
     <h2>#Rent Logs</h2>
-    <table class="table">
-        <thead>
-            <tr>
-                <th>No.</th>
-                <th>User</th>
-                <th>Book Title</th>
-                <th>Rent Date</th>
-                <th>Return Date</th>
-                <th>Actual Return Date</th>
-                <th>Status</th>
-            </tr>
-        </thead>
-        <tbody>
-            <tr>
-                <td colspan="7" style="text-align: center">No Data</td>
-            </tr>
-        </tbody>
-    </table>
+    <div class="text-end text-decoration-underline mt-3"><a href="/rentLogs">View all</a></div>
+    
+     <x-rent-log-table :rentLog='$rentLogs'/>
 </div>
 @endsection

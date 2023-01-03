@@ -3,7 +3,8 @@
 
 @section('content')
     <div class="">
-        <h2>My Rent History</h2>
+        <h1 class="mt-5">Hey {{ Auth::user()->name }}</h1>
+        <h3 class="mb-5">these are your rent history :)</h3>
         <x-rent-log-table :rentLog='$rentLogs'/>
     </div>
 @endsection

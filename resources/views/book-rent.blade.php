@@ -30,7 +30,7 @@
                 <select name="book_id" id="book" class="form-control form-control-lg inputbox" >
                     <option value="">Select Book</option>
                     @foreach ($books as $item)
-                        <option value="{{ $item->id }}">{{ $item->book_code }}  {{ $item->title }}</option>
+                        <option value="{{ $item->id }}">{{ $item->book_code }} | {{ $item->title }} ({{ $item->status }})</option>
                         @endforeach
                 </select>
             </div>

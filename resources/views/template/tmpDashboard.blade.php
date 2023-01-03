@@ -18,7 +18,7 @@
     <div class="main d-flex flex-column justify-content-between">
         <nav class="navbar navbar-expand-lg navbar-dark bg-primary">
             <div class="container-fluid">
-                <a class="navbar-brand" href="#">myPerpus</a>
+                <a class="navbar-brand" href="/">myPerpus</a>
                 <button
                 class="navbar-toggler"
                 type="button"
@@ -39,6 +39,12 @@
                             <a href="/dashboard" @if (request()->route()->uri == 'dashboard') class='active'@endif>Dashboard</a>
 
                             <a href="/books" @if (request()->route()->uri == 'books' || request()->route()->uri == 'book-add' || request()->route()->uri == 'book-edit/{slug}' || request()->route()->uri == 'book-deleted' || request()->route()->uri == 'book-delete/{slug}') class='active'@endif>Books</a>
+                            
+                          {{--   <a href="/" @if (request()->route()->uri == '/') class='active'@endif>Book List</a> --}}
+
+                            <a href="/book-rent" @if (request()->route()->uri == 'book-rent') class='active'@endif>Book Rent</a>
+
+                            <a href="/book-return" @if (request()->route()->uri == 'book-return') class='active'@endif>Book Return</a>
 
                             <a href="/categories" @if (request()->route()->uri == 'categories' || request()->route()->uri == 'category-add' || request()->route()->uri == 'category-edit/{slug}' || request()->route()->uri == 'category-deleted' || request()->route()->uri == 'category-delete/{slug}') class='active'@endif>Categories</a>
 
@@ -46,11 +52,6 @@
 
                             <a href="/rentLogs" @if (request()->route()->uri == 'rentLogs') class='active'@endif>Rent Logs</a>
                         
-                            <a href="/" @if (request()->route()->uri == '/') class='active'@endif>Book List</a>
-
-                            <a href="/book-rent" @if (request()->route()->uri == 'book-rent') class='active'@endif>Book Rent</a>
-
-                            <a href="/book-return" @if (request()->route()->uri == 'book-return') class='active'@endif>Book Return</a>
                             
                             <a href="logout">Logout</a>
                         @else
@@ -68,7 +69,7 @@
                 </div>
             </div>
         </div>
-    </div>
+    </div> 
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js" integrity="sha384-w76AqPfDkMBDXo30jS1Sgez6pr3x5MlQ1ZAGC+nuZB+EYdgRZgiwxhTBTkF7CXvN" crossorigin="anonymous"></script>
     
