@@ -3,7 +3,11 @@
 
 @section('content')
 
-<h1 class="mb-5 mt-5">Welcome, {{ Auth::user()->name }}</h1>
+@if (Auth::user()->name == null)
+    <h1 class="mb-5 mt-5">Welcome</h1>
+@else
+    <h1 class="mb-5 mt-5">Welcome, {{ Auth::user()->name }}</h1>
+@endif
 
 <div class="row" mt-5>
     <div class="col-lg-4">

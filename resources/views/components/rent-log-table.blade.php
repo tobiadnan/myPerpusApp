@@ -16,7 +16,9 @@
                     class="{{ $item->actual_return_date == null ? '' : ($item->actual_return_date > $item->return_date ? 'bg-danger' : 'bg-success')}}"
                     style="{{ $item->actual_return_date == null ? '' : 'color:white'}}">
                         <td>{{ $loop->iteration }}</td>
-                        <td>{{ $item->user->name }}</td>
+                        @if ($item->user)
+                            <td>{{ $item->user->name }}</td>   
+                        @endif
                         <td>{{ $item->book->title }}</td>
                         <td>{{ $item->rent_date }}</td>
                         <td>{{ $item->return_date }}</td>

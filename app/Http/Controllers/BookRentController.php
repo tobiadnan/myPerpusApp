@@ -80,8 +80,23 @@ class BookRentController extends Controller
 
     public function storeReturn(Request $request)
     {
-        #dd($request->all());
-        $rent = RentLog::where('user_id', $request->user_id)->where('book_id', $request->book_id)->where('actual_return_date', null);
+        // $books = Book::where('id', $request->book_id)->first();
+        // $books->DB::update('status', 'in stock');
+        DB::table('books')
+            ->where('id', $request->book_id)
+            ->update(['status' => 'in stock']);
+        //dd($request->all());
+        //dd($books->all());
+        $rent = RentLog::where(
+            'user_id',
+            $request->user_id
+        )->where(
+            'book_id',
+            $request->book_id
+        )->where(
+            'actual_return_date',
+            null
+        );
 
         $rentData = $rent->first();
         $countData = $rent->count();
